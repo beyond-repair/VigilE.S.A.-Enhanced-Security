@@ -16,16 +16,11 @@ Cryptography: Hardware-backed key management via AWS KMS.
 Installation
 Clone the repository:
 
-bash
-Copy
-Edit
 git clone https://github.com/beyond-repair/VigilE.S.A.-Enhanced-Security.git
 cd VigilE.S.A.-Enhanced-Security
 Set up dependencies:
 
-bash
-Copy
-Edit
+
 cargo build --release
 Configure the environment:
 
