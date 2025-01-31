@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: vigil-ebpf-agent
+spec:
+  selector:
+    matchLabels:
+      app: vigil-ebpf
+  template:
+    spec:
+      hostNetwork: true
+      containers:
+      - name: vigil-ebpf
+        image: vigil-sec:latest
+        securityContext:
+          capabilities:
+            add: ["BPF", "NET_ADMIN"]
