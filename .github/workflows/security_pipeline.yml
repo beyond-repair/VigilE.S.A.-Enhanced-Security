@@ -1,0 +1,12 @@
+name: Security Pipeline
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run SAST
+        uses: shiftleft/scan-action@v3
+      - name: Verify Supply Chain
+        uses: sigstore/cosign-installer@v3
