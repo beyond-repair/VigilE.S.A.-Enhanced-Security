@@ -1,0 +1,11 @@
+[network]
+interface = "eth0"
+xdp_program = "deployments/ebpf/firewall.bpf"
+
+[cloud]
+aws_region = "us-west-2"
+gcp_project = "vigil-sec-123"
+
+[hsm]
+provider = "aws_kms"
+key_arn = "arn:aws:kms:us-west-2:123456789:key/abcd1234"
