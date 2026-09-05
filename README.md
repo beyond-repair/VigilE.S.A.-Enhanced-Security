@@ -1,37 +1,36 @@
-VigilE.S.A. - Enhanced Security Architecture
-VigilE.S.A. is an open-source security platform designed to protect networks, cloud infrastructure, and endpoints. Integrating key modern security paradigms like Zero Trust, Confidential Computing, Hardware-backed Cryptography, and AI-driven Threat Detection, it features advanced capabilities such as:
+# VigilE.S.A. Enhanced Security (historical sketch)
 
-eBPF-based network filtering
-SGX/SEV enclave support
-HSM (Hardware Security Module) integration
-Blockchain-backed logs
-Wasm security plugins
-Built in Rust, VigilE.S.A. focuses on modular, scalable security for next-generation systems.
+**Classification:** RESEARCH (not ACTIVE).
+**Claim level:** 0 (idea / incomplete scaffolding).
+**Governing source:** [ADL-Governance](https://github.com/beyond-repair/ADL-Governance).
 
-Features
-Network Security: eBPF filtering for real-time traffic analysis.
-Cloud Security: Multi-cloud threat detection and policy enforcement.
-Incident Response: Forensic tools with secure logs and automated containment.
-Cryptography: Hardware-backed key management via AWS KMS.
-Installation
-Clone the repository:
+This repository is a **2025-era sketch** of a modular Rust security-architecture concept. It is **not** a validated Zero Trust platform, not a production endpoint agent, and not an independently reproduced security product.
 
-git clone https://github.com/beyond-repair/VigilE.S.A.-Enhanced-Security.git
-cd VigilE.S.A.-Enhanced-Security
-Set up dependencies:
+## What is verified
 
+| Item | Status |
+|------|--------|
+| Public tree exists (src/, docs/, deployments/, workflow YAML) | VERIFIED |
+| `Cargo.toml` / lockfile present | **MISSING** |
+| Compilable crate | UNVERIFIED (cannot `cargo build` without manifest) |
+| CI green as a product test suite | UNVERIFIED (`Security Pipeline` checks out + SAST action only; no `cargo test`) |
+| eBPF / SGX / SEV / HSM / Wasm / blockchain-log capabilities | **UNVERIFIED** (module names exist; no evidence of working integrations) |
+| Offensive helpers (`arp_spoof`, `password_audit/cracker`) | **STUBS — do not use** |
 
-cargo build --release
-Configure the environment:
+## What is not claimed
 
-AWS credentials
-SGX-capable hardware for enclave features
-Deployment
-Docker: Use the provided Dockerfile for containerization.
-Kubernetes: Kubernetes configurations for deploying security agents across nodes.
-Terraform: Set up necessary cloud infrastructure like VPCs and KMS keys.
-Documentation
-For full details on architecture, deployment, and module configuration, refer to the Documentation.
+- Production-ready network or cloud protection.
+- Hardware-backed cryptography or confidential-computing attestation.
+- AI-driven threat detection efficacy.
+- Authorization to perform ARP spoofing, password cracking, or MITM.
 
-License
-This project is licensed under the MIT License.
+Those names appear only as incomplete module paths. This sweep does **not** implement them.
+
+## Status after Sweep-062
+
+- README claim-capped.
+- `CLAIMS.md`, `GOVERNANCE.md`, `SECURITY.md` added.
+- Duplicate filename `README .md` left in place (history-preserving; operator may ignore).
+- Target state for this cycle: **documented RESEARCH**, not CI-green product.
+
+See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the original sketch notes.
