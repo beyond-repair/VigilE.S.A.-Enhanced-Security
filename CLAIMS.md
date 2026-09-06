@@ -11,5 +11,7 @@ Policy: ADL-Governance `docs/CLAIM_VALIDATION.md`.
 | Blockchain-backed logs | 0 | No ledger implementation found |
 | Wasm security plugins | 0 | `src/agents/wasm/mod.rs` exists |
 | Compiles with `cargo build --release` | falsified as written | **No Cargo.toml** |
+| Security Pipeline is product CI green | falsified this cycle | Actions run 33992096428 `failure` |
 
 Software readiness is tracked separately from physics/security-efficacy claims. Green SAST checkout ≠ engineering validation (Level 5).
+Sweep-081 (2026-09-06): claim table unchanged except CI row.
