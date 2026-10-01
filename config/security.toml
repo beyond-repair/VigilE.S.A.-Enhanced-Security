@@ -1,11 +1,23 @@
+# VigilE.S.A. demo configuration (Claim-0 sketch)
+# These values drive local in-memory mocks only — no cloud/HSM/eBPF calls.
+
+[demo]
+heartbeat_secs = 1
+max_heartbeats = 3
+label = "vigil-esa-local-demo"
+
 [network]
-interface = "eth0"
+interface = "lo"
+# Historical sketch path; not loaded as real eBPF bytecode in Claim-0.
 xdp_program = "deployments/ebpf/firewall.bpf"
+mock_packets_per_tick = 2
 
 [cloud]
 aws_region = "us-west-2"
-gcp_project = "vigil-sec-123"
+gcp_project = "vigil-sec-demo"
+mock_resource_count = 3
 
 [hsm]
-provider = "aws_kms"
-key_arn = "arn:aws:kms:us-west-2:123456789:key/abcd1234"
+provider = "local_mock"
+# Placeholder ARN shape retained for sketch identity; never sent to AWS.
+key_arn = "arn:aws:kms:us-west-2:000000000000:key/demo-local"

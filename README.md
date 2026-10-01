@@ -7,55 +7,84 @@
 ```
 LIFECYCLE   ARCHIVE
 CLAIM       0
-NOT CLAIMED product · profit · deployment
+NOT CLAIMED product · profit · deployment · real ZTNA/eBPF/HSM
 ```
 
 </div>
 
-> **ARCHIVE QUEUE.** Historical only. Not a product.
+> **ARCHIVE / Claim-0 runnable sketch.** Historical security-architecture concept with a local mock demo. Not a production security product.
 
 ---
 
-# VigilE.S.A. Enhanced Security (historical sketch)
+# VigilE.S.A. Enhanced Security — Claim-0 runnable sketch
 
-**Classification:** RESEARCH (not ACTIVE).
-**Claim level:** 0 (idea / incomplete scaffolding).
+**Classification:** ARCHIVE (research sketch kept runnable).  
+**Claim level:** 0 — local mock security loop only.  
 **Governing source:** [ADL-Governance](https://github.com/beyond-repair/ADL-Governance).
-**Last governed sweep:** Sweep-081 (2026-09-06) — re-audit; no product change.
 
-This repository is a **2025-era sketch** of a modular Rust security-architecture concept. It is **not** a validated Zero Trust platform, not a production endpoint agent, and not an independently reproduced security product.
+This repository is a **2025-era modular Rust security-architecture sketch** repaired into a **clean-clone-verified demo**. It is **not** a validated Zero Trust platform, not a production endpoint agent, and not an independently measured security product.
 
-## What is verified
+## What runs (Claim-0)
 
 | Item | Status |
 |------|--------|
-| Public tree exists (src/, docs/, deployments/, workflow YAML) | VERIFIED |
-| `Cargo.toml` / lockfile present | **MISSING** |
-| Compilable crate | UNVERIFIED (cannot `cargo build` without manifest) |
-| CI green as a product test suite | **FALSIFIED this cycle** — Actions run **33992096428** conclusion=`failure` (Security Pipeline: checkout + SAST + cosign installer; no `cargo test`) |
-| eBPF / SGX / SEV / HSM / Wasm / blockchain-log capabilities | **UNVERIFIED** (module names exist; no evidence of working integrations) |
-| Offensive helpers (`arp_spoof`, `password_audit/cracker`) | **STUBS — do not use; will not be implemented by the sweep agent** |
+| `Cargo.toml` binary crate `vigil-esa` | YES |
+| `cargo build` / `cargo test` (std + common crates) | YES — no AWS/GCP/aya/eBPF required |
+| Demo CLI: load `config/security.toml`, mock heartbeats, `--demo` / `--once` | YES |
+| Mock `NetworkMonitor`, `CloudShield`, `HsmCryptoEngine` | in-memory only |
+| Offensive-named paths (`arp_spoof`, `password_audit/cracker`) | **safe no-op stubs** — refuse; not on the demo path |
+| Real eBPF / SGX / SEV / HSM / cloud protection | **NOT CLAIMED** |
+
+## Quick start
+
+```bash
+git clone https://github.com/beyond-repair/VigilE.S.A.-Enhanced-Security.git
+cd VigilE.S.A.-Enhanced-Security
+
+cargo build
+cargo test
+
+# CI-friendly demo (reads config/security.toml, prints mock heartbeats, exits)
+cargo run -- demo
+
+# Single heartbeat
+cargo run -- once
+
+# Config summary
+cargo run -- status
+```
+
+Optional continuous mock loop (Ctrl-C to exit cleanly):
+
+```bash
+cargo run -- run
+```
+
+Requires a recent stable Rust toolchain (`rustc` / `cargo`).
 
 ## What is not claimed
 
 - Production-ready network or cloud protection.
 - Hardware-backed cryptography or confidential-computing attestation.
 - AI-driven threat detection efficacy.
-- Authorization to perform ARP spoofing, password cracking, or MITM.
+- Authorization or ability to perform ARP spoofing, password cracking, or MITM.
+- That `.github/workflows/security_pipeline.yml` is a green product test suite (left unchanged; SAST/cosign only).
 
-Those names appear only as incomplete module paths. This sweep does **not** implement them.
+See [CLAIMS.md](CLAIMS.md) and [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
-## Status after Sweep-081
+## Project layout (preserved identity)
 
-- Re-audit vs Sweep-065 artifacts: README, CLAIMS.md, GOVERNANCE.md, SECURITY.md still present.
-- Duplicate filename `README .md` left in place (history-preserving; operator may ignore).
-- No Cargo.toml added (would imply a product crate without evidence).
-- Target state for this cycle: **documented RESEARCH**, not CI-green product.
-- GitHub archive remains operator-only.
+```
+config/security.toml     demo config (local mocks)
+src/main.rs              clap CLI entry
+src/lib.rs               SecurityLoop orchestration
+src/core/                network / cloud / incident / vulnerability mocks
+src/modules/             hsm + enclave mocks; password_audit refusal stub
+src/agents/              ebpf + wasm in-memory mocks
+tests/integration.rs     no kernel/cloud required
+```
 
-See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the original sketch notes.
-See [CLAIMS.md](CLAIMS.md) for the claim register.
-
+Duplicate filename `README .md` is left in place (history-preserving).
 
 ---
 
