@@ -1,3 +1,21 @@
+<div align="center">
+
+[![Lifecycle](https://img.shields.io/badge/●_ARCHIVE-64748b?style=for-the-badge&labelColor=0f0f23)](https://github.com/beyond-repair/ADL-Governance)
+[![Claim](https://img.shields.io/badge/Claim_0-22c55e?style=for-the-badge&labelColor=0f0f23)](https://github.com/beyond-repair/ADL-Governance/blob/main/docs/CLAIM_VALIDATION.md)
+[![Governance](https://img.shields.io/badge/ADL--Governance-7c3aed?style=for-the-badge&labelColor=0f0f23)](https://github.com/beyond-repair/ADL-Governance)
+
+```
+LIFECYCLE   ARCHIVE
+CLAIM       0
+NOT CLAIMED product · profit · deployment
+```
+
+</div>
+
+> **ARCHIVE QUEUE.** Historical only. Not a product.
+
+---
+
 # VigilE.S.A. Enhanced Security (historical sketch)
 
 **Classification:** RESEARCH (not ACTIVE).
@@ -37,3 +55,14 @@ Those names appear only as incomplete module paths. This sweep does **not** impl
 
 See [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) for the original sketch notes.
 See [CLAIMS.md](CLAIMS.md) for the claim register.
+
+
+---
+
+<div align="center">
+
+**REWRITE · BUILD · TRANSCEND**
+
+Governing source: [ADL-Governance](https://github.com/beyond-repair/ADL-Governance) · [Claim levels 0–5](https://github.com/beyond-repair/ADL-Governance/blob/main/docs/CLAIM_VALIDATION.md)
+
+</div>
