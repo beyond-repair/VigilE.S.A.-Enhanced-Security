@@ -2,13 +2,13 @@
 
 ## Scope
 
-This repo is an incomplete architecture sketch. Treat all network, crypto, and audit modules as **non-operational**.
+This repo is a Claim-0 architecture sketch with a local mock demo. Treat network, crypto, and audit modules as **non-operational for real protection**.
 
 ## Do not use for
 
-- Offensive network operations (ARP spoof / MITM paths).
-- Password-cracking or credential attacks.
-- Production key management (the KMS ARN in `src/main.rs` is a placeholder).
+- Offensive network operations (ARP spoof / MITM paths are refusal stubs).
+- Password-cracking or credential attacks (`password_audit/cracker` returns empty).
+- Production key management (HSM/KMS values in config are placeholders for local mocks).
 
 ## Reporting
 

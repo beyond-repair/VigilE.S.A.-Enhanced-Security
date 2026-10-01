@@ -2,8 +2,8 @@
 
 This repository is bound to [beyond-repair/ADL-Governance](https://github.com/beyond-repair/ADL-Governance).
 
-- Lifecycle state: **RESEARCH** (registry also lists freeze/archive candidate).
-- Do not promote to ACTIVE without: Cargo manifest, tests, non-offensive scope, CI that runs `cargo test`, SECURITY.md review.
-- Do not expand offensive module bodies (`src/core/network/mitm/`, `src/modules/password_audit/`).
-- Operator actions (GitHub archive, tag, delete duplicate `README .md`, fix/disable failing SAST workflow) live in ADL-Governance `docs/OPERATOR_QUEUE.md`.
-- Last governed sweep: Sweep-081 (2026-09-06).
+- Lifecycle state: **ARCHIVE** with Claim-0 runnable sketch.
+- Do not promote to ACTIVE without: real integrations (not mocks), non-offensive scope review, measured security evidence, CI that runs `cargo test` as product gate.
+- Do not expand offensive module bodies (`src/core/network/mitm/`, `src/modules/password_audit/`) into attack tools — keep refusal stubs.
+- `.github/workflows/security_pipeline.yml` is operator-owned; Finish repair leaves it unchanged.
+- Duplicate `README .md` left in place (history-preserving).
