@@ -10,7 +10,7 @@ Policy: ADL-Governance `docs/CLAIM_VALIDATION.md`.
 | SGX/SEV enclaves | 0 | `SgxEnclave` local seal mock |
 | Wasm security plugins | 0 | Echo mock; no wasmtime |
 | Compiles with `cargo build` | 0 (verified for sketch) | Local `cargo test --locked` Sweep-193: 15 unit + 4 integration passed |
-| `cargo test` passes without AWS/eBPF | 0 (verified for sketch) | Same local run; remote `claim0-tests` conclusion not claimed until Actions completes |
+| `cargo test` passes without AWS/eBPF | 0 (verified for sketch) | Actions `claim0-tests` run 36944242210 success on `5a478853870a76293f891cebc316c86808293f52` |
 | Demo CLI `demo` / `once` | 0 (verified for sketch) | `vigil-esa` binary |
 | Security Pipeline is product CI green | not claimed | Workflow untouched; run 36863696288 failure |
 | `claim0-tests` is a security-efficacy gate | not claimed | Sketch compile/test only |
