@@ -18,7 +18,7 @@ NOT CLAIMED product · profit · deployment · real ZTNA/eBPF/HSM
 
 # VigilE.S.A. Enhanced Security — Claim-0 runnable sketch
 
-**Classification:** ARCHIVE (research sketch kept runnable).  
+**Classification:** ARCHIVED (documentary). GitHub archive flag is not set.  
 **Claim level:** 0 — local mock security loop only.  
 **Governing source:** [ADL-Governance](https://github.com/beyond-repair/ADL-Governance).
 
@@ -30,10 +30,12 @@ This repository is a **2025-era modular Rust security-architecture sketch** repa
 |------|--------|
 | `Cargo.toml` binary crate `vigil-esa` | YES |
 | `cargo build` / `cargo test` (std + common crates) | YES — no AWS/GCP/aya/eBPF required |
-| Demo CLI: load `config/security.toml`, mock heartbeats, `--demo` / `--once` | YES |
+| Demo CLI: load `config/security.toml`, mock heartbeats, `demo` / `once` | YES |
 | Mock `NetworkMonitor`, `CloudShield`, `HsmCryptoEngine` | in-memory only |
 | Offensive-named paths (`arp_spoof`, `password_audit/cracker`) | **safe no-op stubs** — refuse; not on the demo path |
 | Real eBPF / SGX / SEV / HSM / cloud protection | **NOT CLAIMED** |
+| `.github/workflows/claim0-tests.yml` | sketch gate (`cargo test --locked`); remote conclusion pending after Sweep-193 push |
+| `.github/workflows/security_pipeline.yml` | operator-owned; last observed run **failed** |
 
 ## Quick start
 
@@ -68,7 +70,8 @@ Requires a recent stable Rust toolchain (`rustc` / `cargo`).
 - Hardware-backed cryptography or confidential-computing attestation.
 - AI-driven threat detection efficacy.
 - Authorization or ability to perform ARP spoofing, password cracking, or MITM.
-- That `.github/workflows/security_pipeline.yml` is a green product test suite (left unchanged; SAST/cosign only).
+- That `.github/workflows/security_pipeline.yml` is a green product test suite (left unchanged; SAST/cosign only; run 36863696288 failed).
+- That a green `claim0-tests` workflow is a security-efficacy result.
 
 See [CLAIMS.md](CLAIMS.md) and [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md).
 
